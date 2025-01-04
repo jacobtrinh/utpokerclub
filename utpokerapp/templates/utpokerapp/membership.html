@@ -1,0 +1,166 @@
+{% extends 'utpokerapp/main.html/' %}
+{% load static %}
+
+{% block content %}
+    <style>
+
+        body {
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .section-border {
+            background-color: #BF5700;
+            height: 5px;
+        }
+
+
+        .content-wrapper {
+            display: flex;
+            justify-content: flex-start;
+            gap: 20px;
+            padding: 20px;
+            min-height: auto;
+        }
+
+
+        .image-cards {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+
+        .image-cards .card {
+            margin-bottom: 20px;
+        }
+
+
+        .large-text {
+            flex-grow: 1; /* Makes the text area take up remaining space */
+            width: 65%;
+        }
+
+
+        .img-fluid {
+            width: 100%;
+            height: auto;
+        }
+
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .large-text .card-title {
+            color: #BF5700;
+            text-align: center;
+            font-weight: bold;
+            font-size: 2.75rem;
+            margin-bottom: 20px;
+        }
+
+        /* Styling the body of the card */
+        .large-text .card-body {
+            padding: 30px;
+        }
+
+
+        strong {
+            color: #BF5700;
+        }
+
+
+        h6 {
+            font-size: 1.85rem;
+            margin-bottom: 15px;
+        }
+
+
+        p {
+            font-size: 1.35rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+
+        ul, ol {
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+        }
+
+        ul li, ol li {
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+
+    <div class="section-border"></div>
+
+
+    <div class="content-wrapper">
+
+        <div class="image-cards">
+            <div class="card card-body mb-3">
+                <img src="{% static 'images/pic1membership.jpg' %}" class="img-fluid" alt="Poker Image 1">
+            </div>
+            <div class="card card-body mb-3">
+                <img src="{% static 'images/pic5membership.jpg' %}" class="img-fluid" alt="Poker Image 2">
+            </div>
+            <div class="card card-body mb-3">
+                <img src="{% static 'images/pic6membership.jpg' %}" class="img-fluid" alt="Poker Image 3">
+            </div>
+        </div>
+
+
+        <div class="large-text">
+            <div class="card card-body">
+                <h5 class="card-title">Membership</h5>
+                <p>Welcome to the UT Austin Poker Club! Whether you're an experienced player or new to poker, we're excited to have you join our community. As a member, you'll connect with passionate players, participate in friendly competitions, and improve your skills through shared strategies and experiences. You'll also have access to exclusive challenges and opportunities to help organize club events! Our club offers a welcoming environment where everyone can grow, learn, and enjoy the thrill of poker together.</p>
+
+                <h6>Why Join?</h6>
+                <ul>
+                    <li><strong>Tournaments & Events</strong>: Access to exclusive poker tournaments, game nights, and special events.</li>
+                    <li><strong>Skill Development</strong>: Improve your poker strategies with workshops and guidance from experienced players.</li>
+                    <li><strong>Community</strong>: Meet new people, make friends, and be part of a fun and competitive environment.</li>
+                    <li><strong>Prizes & Recognition</strong>: Compete for great prizes and get recognized for your poker skills.</li>
+                    <li><strong>Networking Opportunities:</strong> Connect with like-minded individuals, form lasting friendships, and expand your professional network through poker events and club activities.</li>
+                </ul>
+
+                <h6>How to Join</h6>
+                <p>Becoming a member is simple! Just follow these steps:</p>
+                <ol>
+                    <li><strong>Join our discord</strong>: Join our server below to find information regarding hosted events.</li>
+                    <li><strong>Attend an Event</strong>: Join us at our next meeting or tournament to meet other members and start playing.</li>
+                    <li><strong>Get Involved</strong>: Participate in upcoming games, events, and workshops!</li>
+                </ol>
+
+                <h6>Membership Benefits</h6>
+                <ul>
+                    <li>Access to exclusive poker nights</li>
+                    <li>Eligibility for club tournaments with prizes</li>
+                    <li>Member-only tips and strategy sessions</li>
+                    <li>Opportunities for leadership roles within the club</li>
+                    <li>Poker chips, cards, and table all provided</li>
+                </ul>
+
+                <h6>Contact Us</h6>
+                <p>If you have any questions, need more information, or simply want to connect with other members, feel free to reach out to us in <strong>our discord server below</strong>.
+                  Our community is always ready to help, and we encourage new members to join the conversation.
+                  Whether you're looking for advice, tips, or just a place to chat, our members are here to support each other.
+                  We believe in fostering a friendly and inclusive environment where everyone can contribute and grow.
+                  We can't wait to see you at our next event and help you get the most out of your membership!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section-border"></div>
+
+{% endblock %}

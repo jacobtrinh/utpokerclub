@@ -1,0 +1,143 @@
+{% extends 'utpokerapp/main.html' %}
+{% load static %}
+
+{% block content %}
+<style>
+    :root {
+        --ut-orange: #BF5700;
+        --ut-white: #FFFFFF;
+        --ut-gray: #333F48;
+        --ut-light-gray: #F8F9FA;
+    }
+
+    :root {
+    --ut-tertiary: #CCCCCC; /* Example tertiary color */
+    }
+
+    /* Page Layout */
+    .page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        gap: 2rem; /* Space between left and right sections */
+        justify-content: center;
+        padding: 2rem 1rem;
+    }
+
+    .left-section,
+    .right-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Space items evenly */
+        padding: 1rem;
+        box-sizing: border-box; /* Ensure padding is included in the width calculation */
+    }
+
+    .left-section {
+        flex: 1;
+        max-width: 40%; /* Allow left section to take 40% of the width */
+        gap: 2rem; /* Space between image cards */
+    }
+
+    .right-section {
+        flex: 1.5;
+        max-width: 60%; /* Allow right section to take 60% of the width */
+        gap: 2rem; /* Space between cards and tables */
+    }
+
+    .ut-card {
+    border: 1px solid var(--ut-tertiary); /* Thinner tertiary border */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: var(--ut-white);
+    flex: 1; /* Ensure even spacing within the right section */
+    }
+
+    .ut-card-header {
+        background: var(--ut-orange);
+        color: var(--ut-white);
+        padding: 1rem 1.5rem;
+        border-radius: 12px 12px 0 0;
+        font-weight: bold;
+    }
+
+    .image-card {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--ut-tertiary);
+    flex: 1;
+    }
+
+    .table-wrapper {
+        padding: 1rem;
+    }
+</style>
+
+<div class="page-wrapper">
+
+    <div class="left-section">
+        <div class="image-card" style="background-image: url('{% static 'images/activities7.jpg' %}');"></div>
+        <div class="image-card" style="background-image: url('{% static 'images/activities2.jpg' %}');"></div>
+
+    </div>
+
+
+    <div class="right-section">
+        <div class="ut-card">
+            <div class="ut-card-header">Trusted Hosts</div>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Host</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in hosts %}
+                            <tr>
+                                <td>{{ i.name }}</td>
+                                <td>{{ i.year }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="ut-card">
+            <div class="ut-card-header">Recent Home Games</div>
+            <div class="table-wrapper">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Host</th>
+                            <th>Stake</th>
+                            <th>Location</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in homegames %}
+                        <tr>
+                            <td>{{ i.host }}</td>
+                            <td>${{ i.stake }}</td>
+                            <td>{{ i.location }}</td>
+                            <td>{{ i.date }}</td>
+                            <td>{{ i.time }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}

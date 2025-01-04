@@ -1,0 +1,154 @@
+{% extends 'utpokerapp/main.html/' %}
+{% load static %}
+
+{% block content %}
+
+<div class="hero-section">
+ <img src="{% static 'images/utpokerpic.png' %}" class="hero-image" alt="UT Poker Hero Image">
+ <div class="hero-text">
+ </div>
+</div>
+
+<div class="info-bar">
+ <h2>Poker Club at The University of Texas at Austin</h2>
+</div>
+
+<div class="cards-container">
+    <div class="card">
+        <img src="{% static 'images/dashboard2.jpg' %}" alt="Tournaments">
+        <div class="card-content">
+            <h3>Weekly Games</h3>
+            <p>Join our competitive cash games every week with supplied chips, cards, and table.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/dashboard1.jpg' %}" alt="Learning">
+        <div class="card-content">
+            <h3>Learn Poker</h3>
+            <p>New to poker? Our experienced members will teach you the basics and strategy.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/dashboard5.jpg' %}" alt="Community">
+        <div class="card-content">
+            <h3>Community</h3>
+            <p>Connect with fellow poker enthusiasts and make lasting friendships.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="{% static 'images/dashboard3.jpg' %}" alt="Events">
+        <div class="card-content">
+            <h3>Special Events</h3>
+            <p>Participate in seasonal events and championship tournaments.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.hero-section {
+   position: relative;
+   width: 100%;
+   height: 80vh;
+   overflow: hidden;
+}
+
+.hero-image {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.hero-text {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: white;
+   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-text h1 {
+   font-size: 3.5rem;
+   margin-bottom: 1rem;
+}
+
+.hero-text p {
+   font-size: 1.5rem;
+}
+
+.info-bar {
+   background-color: #BF5700;
+   height: calc(15vh);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.info-bar h2 {
+   color: white;
+   font-size: 2rem;
+   text-align: center;
+   margin: 0;
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.card-content h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-content p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 2rem 1rem;
+    }
+
+    .card-content h3 {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+{% endblock %}

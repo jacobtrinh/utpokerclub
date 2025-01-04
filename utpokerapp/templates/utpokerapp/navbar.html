@@ -1,0 +1,36 @@
+{% load static %}
+
+<style>
+  .text-burnt-orange {
+    color: #BF5700
+  }
+  .text-burnt-orange:hover {
+    color: #8B3E00
+  }
+  .nav-link.active.text-burnt-orange {
+    color: #BF5700
+  }
+  .navbar-brand img {
+    height: 40px;
+    width: auto;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'images/logo.png' %}" alt="UT Poker Club Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link text-burnt-orange active" aria-current="page" href="{% url 'home' %}">Home</a>
+        <a class="nav-link text-burnt-orange" href="{% url 'membership' %}">Membership</a>
+        <a class="nav-link text-burnt-orange" href="{% url 'activities' %}">Activities</a>
+        <a class="nav-link text-burnt-orange" href="{% url 'contact' %}">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
